@@ -1,0 +1,421 @@
+.home-container{
+    background: url("../images/nav.png") no-repeat center;
+    width: 100%;
+    height: 39em;
+    background-size: cover;
+    position: relative;
+    background-position: top;
+    margin: 0px;
+    padding: 0px;
+}
+.myOffer{
+    background: url("../images/bestOffer.png") no-repeat center;
+    background-size: contain;
+    padding: 2.5em 2em 2em 2em;
+    text-align:center;
+    color: rgb(0, 18, 97);
+    margin-left: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: absolute;
+    top: 6%;
+    left: 5%;
+}
+.wrapPrice{
+    height: 9em;
+    width: 9em;
+    background: red;
+   border-radius: 4.5em;
+   position: absolute;
+   left: 78.6%;
+   top: 20%;
+}
+.myPrice{
+    text-align: center;
+    padding-top: 0.5em;
+    color: yellow;
+}
+.myOrder{
+    background: red;
+    font-size:1em;
+    cursor: pointer;
+    color: white;
+    width: 9em;
+    text-align: center;
+    height: 2.9em;
+    border: 0em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    position: absolute;
+    left: 4.9em;
+    margin-top: 29em;
+}
+.text{
+    border:0em green solid;
+    position: absolute;
+    bottom: 17.6em;
+    left: 4em;
+}
+.myText{
+    color: white;
+    font-size: 450%;
+    text-transform: uppercase;
+}
+.myText1{
+    color: white;
+    font-size: 450%;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width:1270px){
+    .home-container{
+        background: url("../images/nav.png") no-repeat center;
+        width: 100%;
+        height: 28em;
+        background-size: cover;
+        position: relative;
+        background-position: top;
+        margin: 0px;
+        padding: 0px;
+    }
+    .wrapPrice{
+        height: 7.5em;
+        width: 7.5em;
+        background: red;
+       border-radius: 3.5em;
+       position: absolute;
+       left: 76.6%;
+       top: 20%;
+    }
+    .myPrice{
+        text-align: center;
+        padding-top: 1em;
+        color: yellow;
+        font-size: 1.6em;
+    }
+    .myOrder{
+        background: red;
+        font-size:1em;
+        cursor: pointer;
+        color: white;
+        width: 8.5em;
+        text-align: center;
+        height: 2.8em;
+        border: 0em;
+        border-radius: 0.5em;
+        font-weight: bold;
+        position: absolute;
+        left: 6em;
+        margin-top: 24em;
+    }
+    .text{
+        border:0em green solid;
+        position: absolute;
+        bottom: 6em;
+        left: 5em;
+    }
+    .myText{
+        color: white;
+        text-transform: uppercase;
+    }
+    .myText1{
+        color: white;
+        font-size: 450%;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .home-container{
+        background: url("../images/nav.png") no-repeat center;
+        width: 100%;
+        height: 26em;
+        background-size: cover;
+        position: relative;
+        background-position: top;
+        margin: 0px;
+        padding: 0px;
+    }
+    .myOffer{
+        background: url("../images/bestOffer.png") no-repeat center;
+        background-size: contain;
+        padding: 2.5em 2em 2em 2em;
+        text-align:center;
+        color: rgb(0, 18, 97);
+        margin-left: 1.5em;
+        font-size: 1.2em;
+        font-weight: bold;
+        position: absolute;
+        top: 12.1em;
+        left: 2.5em;
+    }
+    .wrapPrice{
+        height: 7.5em;
+        width: 7.5em;
+        background: red;
+       border-radius: 3.5em;
+       position: absolute;
+       left: 76.6%;
+       top: 20%;
+    }
+    .myPrice{
+        text-align: center;
+        padding-top: 1em;
+        color: yellow;
+        font-size: 1.6em;
+    }
+    .myOrder{
+        background: red;
+        font-size:1em;
+        cursor: pointer;
+        color: white;
+        width: 8.5em;
+        text-align: center;
+        height: 2.8em;
+        border: 0em;
+        border-radius: 0.5em;
+        font-weight: bold;
+        position: absolute;
+        left: 6em;
+        margin-top: 20em;
+    }
+    .text{
+        border:0em green solid;
+        position: absolute;
+        bottom: 14em;
+        left: 13em;
+    }
+    .myText{
+        color: white;
+        font-size: 2.5em;
+        text-transform: uppercase;
+    }
+    .myText1{
+        color: white;
+        font-size: 450%;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:1030px){
+    .home-container{
+        background: url("../images/nav.png") no-repeat center;
+        width: 100%;
+        height: 24em;
+        background-size: cover;
+        position: relative;
+        background-position: top;
+        margin: 0px;
+        padding: 0px;
+    }
+    .myOffer{
+        background: url("../images/bestOffer.png") no-repeat center;
+        background-size: contain;
+        padding: 2.5em 2em 2em 2em;
+        text-align:center;
+        color: rgb(0, 18, 97);
+        margin-left: 1.5em;
+        font-size: 1.2em;
+        font-weight: bold;
+        position: absolute;
+        top: 10.3em;
+        left: 1.5em;
+    }
+    .wrapPrice{
+        height: 6.5em;
+        width: 6.5em;
+        background: red;
+       border-radius: 3em;
+       position: absolute;
+       left: 76.6%;
+       top: 18.5%;
+    }
+    .myPrice{
+        text-align: center;
+        padding-top: 1em;
+        color: yellow;
+        font-size: 1.4em;
+    }
+    .myOrder{
+        background: red;
+        font-size:1em;
+        cursor: pointer;
+        color: white;
+        width: 8em;
+        text-align: center;
+        height: 2.5em;
+        border: 0em;
+        border-radius: 0.5em;
+        font-weight: bold;
+        position: absolute;
+        left: 5em;
+        margin-top: 18em;
+    }
+    .text{
+        border:0em green solid;
+        position: absolute;
+        bottom: 12em;
+        left: 6em;
+    }
+    .myText{
+        color: white;
+        font-size: 2.5em;
+        text-transform: uppercase;
+    }
+    .myText1{
+        color: white;
+        font-size: 450%;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+}
+
+@media screen and (max-width:820px){
+    .home-container{
+        background: url("../images/nav.png") no-repeat center;
+        width: 100%;
+        height: 20em;
+        background-size: cover;
+        position: relative;
+        background-position: top;
+        margin: 0px;
+        padding: 0px;
+    }
+    .myOffer{
+        background: url("../images/bestOffer.png") no-repeat center;
+        background-size: contain;
+        padding: 2.5em 2em 2em 2em;
+        text-align:center;
+        color: rgb(0, 18, 97);
+        margin-left: 1em;
+        font-size: 1.2em;
+        font-weight: bold;
+        position: absolute;
+        top: 8.9em;
+        left: 1.5em;
+    }
+    .wrapPrice{
+        height: 5em;
+        width: 5em;
+        background: red;
+       border-radius: 2.5em;
+       position: absolute;
+       left: 78.6%;
+       top: 21%;
+    }
+    .myPrice{
+        text-align: center;
+        padding-top: 1em;
+        color: yellow;
+        font-size: 1.2em;
+    }
+    .myOrder{
+        background: red;
+        font-size:1em;
+        cursor: pointer;
+        color: white;
+        width: 7em;
+        text-align: center;
+        height: 2em;
+        border: 0em;
+        border-radius: 0.5em;
+        font-weight: bold;
+        position: absolute;
+        left: 4.9em;
+        margin-top: 16em;
+    }
+    .text{
+        border:0em green solid;
+        position: absolute;
+        bottom: 10em;
+        left: 5em;
+    }
+    .myText{
+        color: white;
+        font-size: 2.5em;
+        text-transform: uppercase;
+    }
+    .myText1{
+        color: white;
+        font-size: 450%;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+}
+
+@media screen and (max-width:650px){
+    .home-container{
+        background: url("../images/nav.png") no-repeat center;
+        width: 100%;
+        height: 20em;
+        background-size: cover;
+        position: relative;
+        background-position: top;
+        margin: 0px;
+        padding: 0px;
+    }
+    .myOffer{
+        background: url("../images/bestOffer.png") no-repeat center;
+        background-size: contain;
+        padding: 2em 1.5em 1.5em 1.5em;
+        text-align:center;
+        color: rgb(0, 18, 97);
+        margin-left: 1em;
+        font-size: 1em;
+        font-weight: bold;
+        position: absolute;
+        top: 12em;
+        left: 0em;
+    }
+    .wrapPrice{
+        height: 5em;
+        width: 5em;
+        background: rgb(238, 10, 10);
+       border-radius: 2.5em;
+       position: absolute;
+       left: 84%;
+       top: 16%;
+    }
+    .myPrice{
+        text-align: center;
+        padding-top: 1em;
+        color: yellow;
+        font-size: 1.2em;
+    }
+    .myOrder{
+        background: red;
+        font-size:1em;
+        cursor: pointer;
+        color: white;
+        width: 7em;
+        text-align: center;
+        height: 2em;
+        border: 0em;
+        border-radius: 0.5em;
+        font-weight: bold;
+        position: absolute;
+        left: 4%;
+        margin-top: 16em;
+    }
+    .text{
+        border:0em green solid;
+        position: absolute;
+        bottom: 9em;
+        left: 3em;
+    }
+    .myText{
+        color: white;
+        font-size: 2.5em;
+        text-transform: uppercase;
+    }
+    .myText1{
+        color: white;
+        font-size: 450%;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+}

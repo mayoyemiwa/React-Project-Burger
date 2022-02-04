@@ -1,0 +1,66 @@
+.container{
+    padding: 0;
+    padding-top: 1em;
+    margin-left: 2em; 
+}
+.fs6{
+    font-size: 1em;
+}
+.f-6{
+    font-size: 0.7em;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: 0.6em;
+    display: block;
+}
+.myFooterEnd{
+    color: white;
+    margin-top: 4em;
+    text-align: center;
+    font-size: 0.8em;
+}
+footer > div > div > div >div > div a.fb{
+    background: url("../images/fb.png") no-repeat center;
+    background-size: contain;
+    padding: 1.3em;
+    margin-right: 0.5em;
+    display: inline;
+}
+footer > div > div > div >div >div >a.in{
+    background: url("../images/in.png") center no-repeat;
+    background-size: contain;
+    padding: 1.3em;
+    margin-right: 0.5em;
+    display: inline;
+}
+footer > div > div > div >div >div > a.tw{
+    background: url("../images/twitter.png") no-repeat center;
+    background-size: contain;
+    padding: 1.3em;
+    margin-right: 0.5em;
+    display: inline;
+    border: none;
+}
+
+input{
+    display: inline;
+    background: black;
+    color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 1px;
+    /* width: 3em; */
+    
+}
+.sub button{
+    position: absolute;
+    padding: 1px;
+    color: black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: inline;
+    
+}
+

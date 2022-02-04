@@ -1,0 +1,67 @@
+.menu1{
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    background: url("../images/bestOffer.png") no-repeat center;
+    background-size: contain;
+    padding: 0.3em 0em 0.1em 0.2em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+.container3{
+    /* display: flex; */
+     text-align: center;
+     margin-bottom: 2em;
+    /* justify-content: space-around */
+}
+.oo{
+    text-align: center;
+}
+.p{
+    color: black;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.lorem{
+    color: black;
+    font-size: 1.5em;
+    margin-top: 1.5em;
+}
+.container4{
+    /* width: 25em; */
+    margin-top: 2em;
+    /* margin: 0 auto; */
+}
+.tag{
+    /* margin: 0 auto; */
+}
+.myTag>img{
+    width: 100%;
+}
+.myTag{
+    width: 33.3%;
+    /* width: 25em; */
+    display: block;
+    float: left;
+}
+.tag span{
+    color: red;
+}
+.tag h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+    /* margin: 0 auto; */
+    text-align: center;
+}
+.tag p{
+    text-transform: capitalize;
+    font-size: 1.05em;
+    /* margin: 0 auto; */
+    text-align: center;
+}
+.container4:after{
+    content: "";
+    display: block;
+    clear: both;
+}

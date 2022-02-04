@@ -1,0 +1,86 @@
+.sbg{
+    background-color: rgb(168, 168, 163);
+    width: 100%;
+    height: 100%;
+}
+.signupContainer{
+    /* background: rgb(126, 121, 121); */
+    width: 400px ;
+    min-height: 500px;
+    /* border: 2px black solid; */
+    margin:  auto ;
+    /* margin-bottom:30px;  */
+    text-align: left;
+}
+.signupheader{
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font:bolder;
+    color: rgb(243, 179, 3);
+    text-align: center;
+}
+.signupInput{
+    color:black;
+    display: block;
+    padding: 11px;
+    padding-left: 30px;
+    width: 100%;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.signupF{
+    color: blue;
+    margin-right: 0;
+    text-decoration: none;
+}
+.signupLabel{
+    text-align:left;
+    font-size: 10px;
+    font-weight: 700;
+}
+.signupLabel2{
+    font-size: 10px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+.signUP{
+    margin-bottom: 10px;
+}
+.signupFlex{
+    display: flex;
+    justify-content: space-between;
+}
+.signupBtn{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: rgb(235, 192, 2);
+    width: 100%;
+    padding: 10px;
+    border: transparent;
+    border-radius: 5px;
+    font-weight: 600;
+    color:white;
+    cursor: pointer;
+}
+.signupP{
+    text-align: left;
+    padding-bottom: 20px;
+    background-color: rgb(168, 168, 163);
+}
+
+.signError{
+    color: red;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+@media screen and (max-width: 750px){
+    .signupContainer{
+        /* background: white; */
+        width: 400px ;
+        min-height: 500px;
+        /* border: 2px black solid; */
+        margin-left:20px;
+        text-align: left;
+    }
+}

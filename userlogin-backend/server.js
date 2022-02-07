@@ -13,7 +13,7 @@ app.use(cookieParser())
 mongoose.connect(process.env.MONGODB_URI, 
   { useNewUrlParser: true, 
     useUnifiedTopology: true })
-  .then((result)=>app.listen(5000, console.log('Listening on port 5000...')))
+  .then((result)=>app.listen(process.env.DATABASE_URL, console.log('Listening on port 5000...')))
   .catch((err)=> console.log(err));
     
 

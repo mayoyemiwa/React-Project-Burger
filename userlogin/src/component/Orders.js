@@ -12,7 +12,7 @@ const Orders = () => {
             </div>
             <div class="container4">
                 <div class="myTag">
-                    <img src={tw} alt="myyyyy"/>
+                    <img src={tw} alt="myorders"/>
                     <div class="tag">
                         <h1>cheese Burger<span> $3.99</span></h1>
                         <p>Lorem ipsum dolor sit amet, consectetur <br/>adipiscing elit fuidhir pinnately.</p>

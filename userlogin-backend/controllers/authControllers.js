@@ -103,7 +103,7 @@ module.exports.login_post = async (req, res) => {
         res.status(200).json({user:user.email})
     }
     catch(err){
-        const errors = handleError(err);
+        const errors = ControllersFunction.handleError(err);
         res.status(400).json(errors)
     }
 }    

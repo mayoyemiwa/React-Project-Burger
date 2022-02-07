@@ -18,7 +18,7 @@ function App() {
 }
 
   return (
-    <Router>
+    <Router basename="/React-Project-Burger">
       <div className="App">
           <Navbar email={email}/>  
             <div className="content">

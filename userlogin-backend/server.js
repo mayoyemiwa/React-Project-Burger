@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const Joi = require('joi');
 const mongoose = require('mongoose');
@@ -20,7 +21,9 @@ app.use(cookieParser())
 //     }
 // });
 
-mongoose.connect('mongodb://localhost/user')
+mongoose.connect(process.env.MONGODB_URI, 
+  { useNewUrlParser: true, 
+    useUnifiedTopology: true })
   .then((result)=>app.listen(5000, console.log('Listening on port 5000...')))
   .catch((err)=> console.log(err));
     

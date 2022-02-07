@@ -111,7 +111,7 @@ module.exports.signup_post = async(req, res) => {
     try{
         const user = await User.create(req.body.signupValues)
         try{
-            const result = await ControllersFunction.sendVerificationEmail(user, res);
+            await ControllersFunction.sendVerificationEmail(user, res);
         }
         catch(err){
             console.log(err)

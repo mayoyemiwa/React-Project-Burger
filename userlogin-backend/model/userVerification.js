@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-const bcrypt = require('bcrypt'); 
-
 const userVerificationSchema = new mongoose.Schema({
     userID:String,
     uniqueString:String,

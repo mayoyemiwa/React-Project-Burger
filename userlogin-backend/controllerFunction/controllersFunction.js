@@ -43,7 +43,6 @@ module.exports.sendVerificationEmail = async({_id, email}, res)=>{
                 })
             }
             catch(err){
-                console.log(err)
                 await User.deleteOne({email})
                 await UserVerification.deleteOne({email});
                 res.json({
@@ -53,7 +52,6 @@ module.exports.sendVerificationEmail = async({_id, email}, res)=>{
             }
         }
         catch(err){
-            console.log(err)
             res.json({
                 status:"FAILED",
                 message:"Could'nt save email data!"
@@ -61,7 +59,6 @@ module.exports.sendVerificationEmail = async({_id, email}, res)=>{
         }
     }
     catch(err){
-        console.log(err)
         res.json({
             status:"FAILED",
             message:"An error occured while hashing email data!"
@@ -86,7 +83,6 @@ module.exports.sendForgetPwdEmail = async({email}, res)=>{f
                 })
             }
             catch(err){
-                console.log(err)
                 res.json({
                     status:"FAILED",
                     message:"Verification email failed"

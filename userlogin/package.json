@@ -2,7 +2,7 @@
   "name": "userlogin",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/build",
+  "homepage": "/",
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
@@ -11,6 +11,7 @@
     "axios": "^0.24.0",
     "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.7.2",
+    "concurrently": "^7.0.0",
     "express": "^4.17.2",
     "jquery": "^3.6.0",
     "nodemon": "^2.0.15",
@@ -20,13 +21,17 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
+    "serve": "^13.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "src": "cd src && npm start",
+    "server": "cd ../userlogin-backend && nodemon Server.js",
+    "start_full_app": " concurrently \"npm run server\" \"npm run src"
   },
   "eslintConfig": {
     "extends": [

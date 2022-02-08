@@ -3,12 +3,14 @@ import React from 'react'
 import '../css/Home.css';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-// const navigate = useNavigate();
 
 const Home = () => {
     let navigate = useNavigate()
 
+    console.log('mayoyemiwa')
+
     const HandleClick = async () => {
+        console.log('mayoyemiwa')
         const result = await axios.get('/api/orders');
         if(result.data.verify === true){
            navigate('/orders', {replace: true})

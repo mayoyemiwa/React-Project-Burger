@@ -24,6 +24,7 @@ const Signup = () => {
     
             try{
             const result = await axios.post('/api/signup', {signupValues})
+            console.log(signupValues)
                 if(result.data.status ) {
                     setIsLoding(false);
                     setsignupError({...signupError, username:'', email:'', pwd:'' })

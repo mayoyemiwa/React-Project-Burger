@@ -2,7 +2,7 @@ require('dotenv').config();
 const {v4:uuidv4} = require('uuid');
 const bcrypt = require('bcrypt');
 const User = require('../model/User');
-const UserVerification = require('../model/UserVerification');
+const UserVerification = require('../model/userVerification');
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({

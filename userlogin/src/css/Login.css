@@ -1,14 +1,11 @@
 .loginContainer{
-    /* background: white; */
     width: 400px ;
     height: 400px;
     border: 2px transparent;
     padding-top: 20px;
     margin: auto ;
-    /* text-align: center; */
 }
 .header{
-    /* margin-top: 20px; */
     margin-bottom: 40px;
     font:bolder;
     color: rgb(235, 192, 2);
@@ -21,7 +18,6 @@
     width: 100%;
     box-sizing: border-box;
     border-radius: 5px;
-
 }
 .loginF{
     color: blue;
@@ -41,7 +37,7 @@
     font-weight: 700;
 }
 .login{
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 .loginError{
     color: red;

@@ -16,31 +16,50 @@ const Login = ({myEmail}) => {
 const handleChange = (e) => {
     const {name, value} = e.target
     setLoginValues({...loginValues, [name]:value})
+    if(e.target.name === "email"){
+        setLoginError({...loginError, email:''})
+    }
+    if(e.target.name === "pwd"){
+        setLoginError({...loginError, pwd:''})
+    }
 }
   
 const handleSubmit =async(e) => {
     e.preventDefault();
     setIsLoding(true)
-    try{
-        const result = await axios.post('/api/login', {loginValues})
-        setIsLoding(false);
-            if(result.statusText) {
-                alert(`${result.data.user} was successfully logged in`)
-                setLoginValues(initialInputValues)
-                setLoginError({...loginError, email:'', pwd:'' })
-                myEmail(loginValues.email)
-                navigate('/')
-            } 
+
+    if(!loginValues.email.length > 0 || !loginValues.pwd.length > 0){
+       if(!loginValues.email.length > 0){
+        setLoginError({...loginError, email:'This field cannot be empty', pwd:'' })
+        setIsLoding(false)
+       }
+       else if(!loginValues.pwd.length > 0){
+        setLoginError({...loginError, email:'', pwd:'This field cannot be empty' })
+        setIsLoding(false)
+       }
     }
-            catch(error){
-                if(error){
-                setIsLoding(false)
-                setLoginError({...loginError, 
-                    email:error.response.data.email, 
-                    pwd:error.response.data.pwd
-                })
-                }   
-            }  
+    else{
+        try{
+            const result = await axios.post('/api/login', {loginValues})
+            setIsLoding(false);
+                if(result.statusText) {
+                    alert(`${result.data.user} was successfully logged in`)
+                    setLoginValues(initialInputValues)
+                    setLoginError({...loginError, email:'', pwd:'' })
+                    myEmail(loginValues.email)
+                    navigate('/')
+                } 
+        }
+                catch(error){
+                    if(error){
+                    setIsLoding(false)
+                    setLoginError({...loginError, 
+                        email:error.response.data.email, 
+                        pwd:error.response.data.pwd
+                    })
+                    }   
+                } 
+    } 
         }
     return (
         <div className="sbg">

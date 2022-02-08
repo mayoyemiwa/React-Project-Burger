@@ -1,5 +1,5 @@
 const User = require('../model/User');
-const UserVerification = require('../model/UserVerification');
+const UserVerification = require('../model/userVerification');
 const ControllersFunction = require('../controllerFunction/controllersFunction')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -108,8 +108,10 @@ module.exports.login_post = async (req, res) => {
     }
 }    
 module.exports.signup_post = async(req, res) => {
+    console.log('signup')
     try{
         const user = await User.create(req.body.signupValues)
+        console.log(user)
         try{
             await ControllersFunction.sendVerificationEmail(user, res);
         }

@@ -4,12 +4,9 @@
     height: 100%;
 }
 .signupContainer{
-    /* background: rgb(126, 121, 121); */
     width: 400px ;
     min-height: 500px;
-    /* border: 2px black solid; */
     margin:  auto ;
-    /* margin-bottom:30px;  */
     text-align: left;
 }
 .signupheader{
@@ -76,10 +73,8 @@
 
 @media screen and (max-width: 750px){
     .signupContainer{
-        /* background: white; */
         width: 400px ;
         min-height: 500px;
-        /* border: 2px black solid; */
         margin-left:20px;
         text-align: left;
     }

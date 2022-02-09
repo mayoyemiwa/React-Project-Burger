@@ -6,20 +6,30 @@ import axios from 'axios';
         const [email, setEmail] = useState('');
         const [isLoading, setIsLoading] = useState('');
         const [verificationError, setVerificationError] = useState('');
+        const [error, setError] = useState('');
 
         const handleSubmit =async(e) => {
             e.preventDefault();
             setIsLoading(true);
-            try{
-                const result = await axios.post('/api/forgetPwd', {email});
-                setVerificationError(result.data.message)
-                setIsLoading(false);
+            setVerificationError('')
+            setError('')
+
+            if(!email.length > 0){
+                setError('This field cannot be empty')
+                setIsLoading(false)
             }
-             catch(error){
-                 console.log(error)
-                 setVerificationError('')
-                 setIsLoading(false)
-             }
+            else{
+                try{
+                    const result = await axios.post('/api/forgetPwd', {email});
+                    console.log(result)
+                    setVerificationError(result.data.message)
+                    setIsLoading(false);
+                }
+                 catch(error){
+                     setError(error.response.data)
+                     setIsLoading(false)
+                 }
+            }
         }
         return (
             <div className="sbg">
@@ -30,7 +40,8 @@ import axios from 'axios';
                     <form className="form" onSubmit={handleSubmit}>
                         <div className="login">
                             <label className="loginLabel">ENTER YOUR EMAIL ADDRESS</label>
-                            <input className="loginInput bg-white" type="text" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="john@example.com"/>
+                            <input className="loginInput bg-white" type="text" name="email" value={email} onChange={(e)=>{setEmail(e.target.value); setError('')}} placeholder="john@example.com"/>
+                            { error.length > 0 && <div className="signError">{error}</div> }
                         </div>
                         <button className="loginBtn">Submit</button>
                     </form>

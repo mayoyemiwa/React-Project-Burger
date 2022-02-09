@@ -19,6 +19,7 @@ import axios from 'axios';
             setIsLoading(true);
             setPwdError('');
             setPwdError2('');
+            setForgottenError('')
             if(pwd.length === 0 || pwd2.length === 0){
                 if(pwd.length === 0 ){
                     setPwdError('This field cannot be empty please')
@@ -36,10 +37,11 @@ import axios from 'axios';
                     setPwd2("")
                 }else{
                     try{
-                       await axios.post('/api/pwdreset', {email, pwd});
+                       const result = await axios.post('/api/pwdreset', {email, pwd});
                        setIsLoading(false);
                         setPwd("")
                         setPwd2("")
+                        alert(`${result.data}`)
                         navigate('/login')
                     }
                      catch(error){

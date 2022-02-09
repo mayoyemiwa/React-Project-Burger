@@ -108,10 +108,8 @@ module.exports.login_post = async (req, res) => {
     }
 }    
 module.exports.signup_post = async(req, res) => {
-    console.log('signup')
     try{
         const user = await User.create(req.body.signupValues)
-        console.log(user)
         try{
             await ControllersFunction.sendVerificationEmail(user, res);
         }
@@ -144,41 +142,39 @@ module.exports.orders_get = async(req, res) => {
 module.exports.forgetpwd_post = async(req, res) => {
     const email = req.body.email;
     try{
-      const user = await User.findOne({email});
-      console.log(user)
-        try{
-           ControllersFunction.sendForgetPwdEmail(user, res)
-        }
-        catch(err){
-            console.log(err.message)
-            res.status(400).json(err)
+        const user = await User.findOne({email});
+        if(user){
+            try{
+            ControllersFunction.sendForgetPwdEmail(user, res)
+            }
+            catch(error){
+                console.log(error)
+                res.status(400).json(error)
+            }
+        }else{
+            res.status(404).json("Email not found. Please sign up");
         }
     }
     catch(error){
-        console.log(error);
-        res.status(400).json({error});
+        res.status(404).json(error);
     }
-    
 }
 module.exports.pwdReset_post = async(req, res) => {
     const {email, pwd} = req.body;
     const salt = await bcrypt.genSalt();
         try{
-        const user = await User.findOne({email})
-            if(user){
+            await User.findOne({email})
+            try{
                 const newPwd = await bcrypt.hash(pwd, salt)
-                console.log(newPwd)
-                const updated = await User.updateOne({email}, {pwd:newPwd})
-                if(updated){
-                    res.status(200).json('Password updated. You can now Log in')
-                }else{
-                    res.status(400).json('Password could not update. Please try again')
-                }
-            }else{
-                res.status(404).json('Email does not exist Please go to Sign up page to sign in')
+                await User.updateOne({email}, {pwd:newPwd})
+            }
+            catch(error){
+                res.status(400).json("'Error:' unable to update")
             }
         }
-        catch(err){}
+        catch(error){
+            res.status(404).json("user not found")
+        }
 }
 module.exports.logout_get = (req, res) => {
   res.cookie('jwt', "", {maxAge:1})

@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports.sendVerificationEmail = async({_id, email}, res)=>{
-    const currentUrl = "http://localhost:5000/"
+    const localUrl = "http://localhost:5000/"
     const uniqueString = uuidv4() + _id;
     const mailOptions = {
         from:process.env.AUTH_EMAIL,
@@ -22,7 +22,7 @@ module.exports.sendVerificationEmail = async({_id, email}, res)=>{
         subject:"Please verify your account from your fucking email",
         html:`<p>Veify your email to complete your signup and login into your account.</><p>This link 
         <b>expires in 6 hours</b>.</p><p>press <a href=${
-            currentUrl + 'user/verify/' + _id + '/' + uniqueString
+            localUrl + 'user/verify/' + _id + '/' + uniqueString
          }>here</a> to proceed</p>`,
     }
     const salt = await bcrypt.genSalt();
@@ -65,18 +65,19 @@ module.exports.sendVerificationEmail = async({_id, email}, res)=>{
         })
     }
 }
-module.exports.sendForgetPwdEmail = async({email}, res)=>{f
-    const currentUrl = "http://localhost:3000/"
+module.exports.sendForgetPwdEmail = async({email}, res)=>{
+    console.log(email)
+    const localUrl = "http://localhost:3000/"
     const mailOptions = {
         from:process.env.AUTH_EMAIL,
         to:email,
         subject:"Change your password",
         html:`<p>Please click the link below to change your password.</><p>This link 
         </p><p><b>press.</b><a href=${
-            currentUrl + 'api/pwdreset' + '/' + email }>here</a> to proceed</p>`,
+            localUrl + 'api/pwdreset' + '/' + email }>here</a> to proceed</p>`,
     }
             try{
-                await transporter.sendMail(mailOptions);
+                await transporter.sendMail(mailOption);
                 res.json({
                     status:"PENDING",
                     message:"Verification email sent"

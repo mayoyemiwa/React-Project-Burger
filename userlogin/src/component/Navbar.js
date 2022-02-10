@@ -26,7 +26,7 @@ useEffect(()=>{
 
 const handleClick = async(e) =>{
   try{
-      const result = await axios.get('/api/logout')
+      const result = await axios.get('http://localhost:5000/api/logout')
       if(result){
         navigate('/')
       }else{

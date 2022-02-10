@@ -3,12 +3,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes')
-const path = require('path');
+const bodyParser = require('body-parser');
+const cors = require('cors')
+// const path = require('path');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser())
-// app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname, 'build')));
 
 

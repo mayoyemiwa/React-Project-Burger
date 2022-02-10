@@ -40,7 +40,8 @@ const handleSubmit =async(e) => {
     }
     else{
         try{
-            const result = await axios.post('/api/login', {loginValues})
+            const result = await axios.post('http://localhost:5000/api/login', {loginValues})
+            console.log(result.response)
             setIsLoding(false);
                 if(result.statusText) {
                     alert(`${result.data.user} was successfully logged in`)

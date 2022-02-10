@@ -99,6 +99,7 @@ module.exports.login_post = async (req, res) => {
     try{
         const user = await User.login(email, pwd);
         const token = await createToken(user._id);
+        console.log(token)
         res.cookie('jwt', token, {httpOnly:true, maxAge:maxAge * 1000, secure:true});
         res.status(200).json({user:user.email})
     }

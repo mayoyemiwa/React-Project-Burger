@@ -20,7 +20,7 @@ import axios from 'axios';
             }
             else{
                 try{
-                    const result = await axios.post('/api/forgetPwd', {email});
+                    const result = await axios.post('http://localhost:5000/api/forgetPwd', {email});
                     console.log(result)
                     setVerificationError(result.data.message)
                     setIsLoading(false);
@@ -50,4 +50,3 @@ import axios from 'axios';
         )
     }
     export default ForgetPwd
-    

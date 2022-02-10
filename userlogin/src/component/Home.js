@@ -5,13 +5,10 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 
 const Home = () => {
-    let navigate = useNavigate()
-
-    console.log('mayoyemiwa')
+    let navigate = useNavigate();
 
     const HandleClick = async () => {
-        console.log('mayoyemiwa')
-        const result = await axios.get('/api/orders');
+        const result = await axios.get('http://localhost:5000/api/orders');
         if(result.data.verify === true){
            navigate('/orders', {replace: true})
         }

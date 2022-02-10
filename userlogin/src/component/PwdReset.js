@@ -37,7 +37,7 @@ import axios from 'axios';
                     setPwd2("")
                 }else{
                     try{
-                       const result = await axios.post('/api/pwdreset', {email, pwd});
+                       const result = await axios.post('http://localhost:5000/api/pwdreset', {email, pwd});
                        setIsLoading(false);
                         setPwd("")
                         setPwd2("")

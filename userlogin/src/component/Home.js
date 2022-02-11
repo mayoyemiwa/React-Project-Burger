@@ -8,7 +8,7 @@ const Home = () => {
     let navigate = useNavigate();
 
     const HandleClick = async () => {
-        const result = await axios.get('http://localhost:5000/api/orders');
+        const result = await axios.get('https://userlogin-backend.herokuapp.com/api/orders');
         if(result.data.verify === true){
            navigate('/orders', {replace: true})
         }

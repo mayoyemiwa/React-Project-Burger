@@ -37,11 +37,11 @@ import axios from 'axios';
                     setPwd2("")
                 }else{
                     try{
-                       const result = await axios.post('http://localhost:5000/api/pwdreset', {email, pwd});
+                       const result = await axios.post('https://userlogin-backend.herokuapp.com/api/pwdreset', {email, pwd});
                        setIsLoading(false);
+                       setForgottenError(result.data)
                         setPwd("")
                         setPwd2("")
-                        alert(`${result.data}`)
                         navigate('/login')
                     }
                      catch(error){

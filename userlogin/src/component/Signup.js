@@ -10,6 +10,8 @@ const Signup = () => {
   const [signupError, setsignupError] = useState(inputErrors)
   const [isLoading, setIsLoding] = useState(false);
   const [verificationError, setVerificationError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -21,14 +23,16 @@ const Signup = () => {
         e.preventDefault();
         setIsLoding(true)
         setVerificationError('');
+        console.log('sign up');
     
             try{
-            const result = await axios.post('http://localhost:5000/api/signup', {signupValues})
-            // console.log(signupValues)
+            const result = await axios.post('https://userlogin-backend.herokuapp.com/api/signup', {signupValues});
                 if(result.data.status ) {
                     setIsLoding(false);
                     setsignupError({...signupError, username:'', email:'', pwd:'' })
-                    setVerificationError(result.data.message)
+                    // navigate('/singupSuccess')
+                    setMessage(result.data.message)
+                    setSuccess(true)
                 } else{
                     setIsLoding(false);
                     setSignupValues(initialInputValues)
@@ -48,34 +52,41 @@ const Signup = () => {
                 }   
             }
     }
-    return (
-        <div className="sbg" >
-        <div className="signupContainer">
-            {verificationError && <div><h6>{verificationError}</h6></div>}
-            {isLoading && <div className="tc">Loading</div>}
-            <p className="signupheader">SIGNUP</p>
-        <form  className="signUP" onSubmit={handleSubmit}>
-            <div className="signUP">
-                <label className="signupLabel">FULLNAME</label>
-                <input className="signupInput bg-white" onChange={handleChange} name="username" value={signupValues.username} type="text" placeholder="John Doe"/>
-                { signupError.username.length > 0 && <div className="signError">{signupError.username}</div> }
+    return (<div>
+        {!success ? 
+            <div className="sbg" >
+                <div className="signupContainer">
+                    {verificationError && <div><h6>{verificationError}</h6></div>}
+                    {isLoading && <div className="tc">Loading</div>}
+                    <p className="signupheader">SIGNUP</p>
+                <form  className="signUP" onSubmit={handleSubmit}>
+                    <div className="signUP">
+                        <label className="signupLabel">FULLNAME</label>
+                        <input className="signupInput bg-white" onChange={handleChange} name="username" value={signupValues.username} type="text" placeholder="John Doe"/>
+                        { signupError.username.length > 0 && <div className="signError">{signupError.username}</div> }
+                    </div>
+                    <div className="signUP">
+                        <label className="signupLabel">EMAIL ADDRESS</label>
+                        <input className="signupInput bg-white" onChange={handleChange} name="email" value={signupValues.email} type="text" placeholder="john@example.com"/>
+                        { signupError.email.length > 0 && <div className="signError">{signupError.email}</div> }
+                    </div>
+                    <div className="signUP">
+                        <label className="signupLabel2">PASSWORD</label>
+                        <input className="signupInput bg-white" onChange={handleChange} type="text" name="pwd" value={signupValues.pwd} placeholder="password"/>
+                    </div>
+                    { signupError.pwd.length > 0 && <div className="signError">{signupError.pwd}</div> }
+                    <button className="signupBtn">REGISTER</button>
+                </form>
+                <p className="signupP">Already a member?<Link to="/login" className="signupF">Login</Link></p>
+                </div>
+            </div>:
+            <div className="sbg2" >
+                <div className="signupContainer2">
+                    <h1 style={{color:"green", textAlign:"center"}}>{ message }</h1>
+                </div>
             </div>
-            <div className="signUP">
-                <label className="signupLabel">EMAIL ADDRESS</label>
-                <input className="signupInput bg-white" onChange={handleChange} name="email" value={signupValues.email} type="text" placeholder="john@example.com"/>
-                { signupError.email.length > 0 && <div className="signError">{signupError.email}</div> }
-            </div>
-            <div className="signUP">
-                <label className="signupLabel2">PASSWORD</label>
-                <input className="signupInput bg-white" onChange={handleChange} type="text" name="pwd" value={signupValues.pwd} placeholder="password"/>
-            </div>
-            { signupError.pwd.length > 0 && <div className="signError">{signupError.pwd}</div> }
-            <button className="signupBtn">REGISTER</button>
-        </form>
-        <p className="signupP">Already a member?<Link to="/login" className="signupF">Login</Link></p>
-    </div>
-    </div>
-    )
+        }
+    </div>)
 }
 
 export default Signup

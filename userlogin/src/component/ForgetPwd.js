@@ -5,13 +5,13 @@ import axios from 'axios';
    
         const [email, setEmail] = useState('');
         const [isLoading, setIsLoading] = useState('');
-        const [verificationError, setVerificationError] = useState('');
+        const [success, setSuccess] = useState(false);
+        const [message, setMessage] = useState('');
         const [error, setError] = useState('');
 
         const handleSubmit =async(e) => {
             e.preventDefault();
             setIsLoading(true);
-            setVerificationError('')
             setError('')
 
             if(!email.length > 0){
@@ -20,9 +20,10 @@ import axios from 'axios';
             }
             else{
                 try{
-                    const result = await axios.post('http://localhost:5000/api/forgetPwd', {email});
+                    const result = await axios.post('https://userlogin-backend.herokuapp.com/api/forgetPwd', {email});
                     console.log(result)
-                    setVerificationError(result.data.message)
+                    setSuccess(true)
+                    setMessage(result.data.message)
                     setIsLoading(false);
                 }
                  catch(error){
@@ -31,10 +32,10 @@ import axios from 'axios';
                  }
             }
         }
-        return (
-            <div className="sbg">
+        return (<div>
+            {!success ?
+                <div className="sbg">
                 <div className="loginContainer">
-                {verificationError && <div>{verificationError}</div>}
                 {isLoading && <div className="tc">Loading</div>}
                     <p className="header">PASSWORD RESET</p>
                     <form className="form" onSubmit={handleSubmit}>
@@ -46,7 +47,14 @@ import axios from 'axios';
                         <button className="loginBtn">Submit</button>
                     </form>
                 </div>
-            </div>
+            </div> :
+            <div className="sbg2" >
+                <div className="signupContainer2">
+                    <h2 style={{color:"green", textAlign:"center"}}>{ message }</h2>
+                </div>
+            </div> 
+            }
+        </div>
         )
     }
     export default ForgetPwd
